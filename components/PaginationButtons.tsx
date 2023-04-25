@@ -1,5 +1,5 @@
 import React from "react";
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -13,19 +13,19 @@ const PaginationButtons = () => {
       {startIndex >= 10 && (
         <Link
           href={`/search?term=${router.query.term}&start=${startIndex - 10}`}
-          className="flex items-center text-primary hover:underline"
+          className="flex items-center flex-col text-primary hover:underline"
         >
-          <HiOutlineChevronLeft />
+          <BsChevronLeft />
           <p>Prev</p>
         </Link>
       )}
 
       <Link
         href={`/search?term=${router.query.term}&start=${startIndex + 10}`}
-        className="flex items-center text-primary hover:underline"
+        className="flex items-center flex-col text-primary hover:underline"
       >
+        <BsChevronRight />
         <p>Next</p>
-        <HiOutlineChevronRight />
       </Link>
     </div>
   );
